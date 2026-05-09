@@ -19,7 +19,7 @@ jobs:
                   node-version: "24"
 
             - name: Install Dependencies
-              run: npm install
+              run: npm ci
 
     build:
         runs-on: ubuntu-latest
@@ -34,10 +34,10 @@ jobs:
                   node-version: "24"
 
             - name: Install Dependencies
-              run: npm install
+              run: npm ci
 
             - name: Build
-              run: npm run build
+              run: npx vite build
 
             - name: Upload dist artifact
               uses: actions/upload-artifact@v4
